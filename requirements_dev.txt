@@ -1,0 +1,8 @@
+pytest==4.5.0
+tox==3.8.6
+cookiecutter>=1.4.0
+pytest-cookies==0.3.0
+watchdog==0.9.0
+Sphinx==2.0.1
+sphinx-rtd-theme==0.4.3 # Getting deprecation warning, theme needs to update.
+Pygments==2.4.1

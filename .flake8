@@ -1,0 +1,7 @@
+exclude = \
+    .git \
+    .eggs \
+    *.egg-info \
+    __pycache__ \
+    migrations \
+    _build \
