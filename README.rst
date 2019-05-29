@@ -4,7 +4,7 @@ Pycookiecutter
 
 
 .. image:: https://img.shields.io/pypi/v/pycookiecutter.svg
-        :target: https://pypi.python.org/pypi/pycookiecutter
+        :target: https://pypi.org/project/pycookiecutter
 
 .. image:: https://img.shields.io/travis/mqlab-dev/pycookiecutter.svg
         :target: https://travis-ci.org/mqlab-dev/pycookiecutter
