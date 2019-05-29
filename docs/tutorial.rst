@@ -100,7 +100,7 @@ Your virtualenv should still be activated. If it isn't, activate it now. Install
 Step 5: Set Up Travis CI
 ------------------------
 
-`Travis CI com`_ is a continuous integration tool used to prevent integration problems. Every commit to the master branch will trigger automated builds of the application.
+`Travis CI`_ is a continuous integration tool used to prevent integration problems. Every commit to the master branch will trigger automated builds of the application.
 
 Login using your Github credentials. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with boxes to the left of the repo name, where the boxes have an ``X`` in them, meaning it is not connected to Travis CI.
 
@@ -119,7 +119,7 @@ This will:
 
 See :doc:`travis_pypi_setup` for more information.
 
-.. _`Travis CI com`: https://travis-ci.com/
+.. _`Travis CI`: https://travis-ci.com/
 
 
 Step 6: Set Up ReadTheDocs

@@ -29,6 +29,7 @@ clean-build:
 	rm -fr .eggs/
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
+	find . -name '.DS_Store' -exec rm -fr {} +
 
 clean-pyc:
 	find . -name '__pycache__' -exec rm -fr {} +
