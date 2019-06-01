@@ -195,6 +195,38 @@ def test_not_using_pytest(cookies):
         assert "import pytest" not in ''.join(lines)
 
 
+def test_using_versioneer(cookies):
+    context = {'use_versioneer': "y"}
+    result = cookies.bake(extra_context=context)
+    project_dir = str(result.project)
+    cmd = ["versioneer", "install"]
+    with inside_dir(project_dir):
+        subprocess.call(cmd) == 0
+
+
+def test_not_using_versioneer(cookies):
+    result = cookies.bake()
+    project_path, project_slug, project_dir = project_info(result)
+    found_project_files = os.listdir(project_path)
+    found_module_files = os.listdir(project_dir)
+    assert "versioneer.py" not in found_project_files
+    assert "_version.py" not in found_module_files
+
+    setup_path = os.path.join(project_path, 'setup.py')
+    manifest_path = os.path.join(project_path, 'MANIFEST.in')
+    init_path = os.path.join(project_dir, '__init__.py')
+
+    with open(manifest_path, 'r') as manifest_file:
+        assert 'include versioneer.py' not in manifest_file.read()
+        assert 'include ./_version.py' not in manifest_file.read()
+
+    with open(setup_path, 'r') as setup_file:
+        assert 'versioneer' not in setup_file.read()
+
+    with open(init_path, 'r') as init_file:
+        assert 'from ._version import get_versions' not in init_file.read()
+
+
 def test_bake_with_no_console_script(cookies):
     context = {'command_line_interface': "No command-line interface"}
     result = cookies.bake(extra_context=context)

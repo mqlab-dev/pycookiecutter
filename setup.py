@@ -3,6 +3,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+import versioneer
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -10,23 +11,33 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
+
+name = 'pycookiecutter'
+packages = find_packages()
+url = 'https://github.com/mqlab-dev/pycookiecutter'
+version = versioneer.get_version()
+cmdclass = versioneer.get_cmdclass()
+author = "Qiong X. Michaels"
+author_email = 'qiong@mqlab.dev'
+description = "Starting template for creating a Python package."
+keywords = ['cookiecutter', 'template', 'package']
 requirements = []
-
 setup_requirements = ['pytest-runner', ]
-
 test_requirements = ['pytest', ]
 
+
 setup(
-    name='pycookiecutter',
-    packages=find_packages(include=['pycookiecutter']),
-    url='https://github.com/mqlab-dev/pycookiecutter',
-    version='0.1.0',
-    author="Qiong X. Michaels",
-    author_email='qiong@mqlab.dev',
+    name=name,
+    packages=packages,
+    url=url,
+    version=version,
+    cmdclass=cmdclass,
+    author=author,
+    author_email=author_email,
     license="BSD license",
-    description="Starting template for creating a Python package.",
+    description=description,
     long_description=readme + '\n\n' + history,
-    keywords=['cookiecutter', 'template', 'package', ],
+    keywords=keywords,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Console',

@@ -9,4 +9,4 @@ Pygments==2.4.2
 wheel==0.33.4
 twine==1.13.0
 coverage==4.5.3
-bumpversion==0.5.3
+versioneer==0.18

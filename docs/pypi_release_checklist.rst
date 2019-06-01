@@ -28,7 +28,8 @@ For Every Release
 
     .. code-block:: bash
 
-        bumpversion minor
+        git tag <new-version-number>
+        git push --tags
 
 #. Install the package again for local development, but with the new version number:
 

@@ -1,5 +1,4 @@
 pip==19.1.1
-bumpversion==0.5.3
 wheel==0.33.4
 watchdog==0.9.0
 flake8==3.7.7
@@ -7,8 +6,13 @@ tox==3.12.1
 coverage==4.5.3
 Sphinx==2.0.1
 twine==1.13.0
-{% if cookiecutter.command_line_interface == 'y' -%}
-click==7.0{% endif %}
+{% if cookiecutter.use_versioneer == 'y' -%}
+versioneer==0.18
+{%- endif %}
+{% if cookiecutter.command_line_interface == 'Click' -%}
+click==7.0
+{%- endif %}
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest==4.5.0
-pytest-runner==5.1{% endif %}
+pytest-runner==5.1
+{% endif %}

@@ -13,6 +13,7 @@ Getting Started
    troubleshooting
    history
    authors
+   contributing
 
 Basics
 ------

@@ -51,4 +51,11 @@ To generate a template, run this command in your terminal:
 
     $ cookiecutter https://github.com/mqlab-dev/pycookiecutter
 
+Or:
+
+.. code-block:: bash
+
+    $ pip install pycookiecutter
+    $ cookiecutter pycookiecutter
+
 
