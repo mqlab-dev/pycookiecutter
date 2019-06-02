@@ -24,7 +24,7 @@ url = 'https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.pro
 author = "{{ cookiecutter.full_name.replace('\"', '\\\"') }}"
 author_email = '{{ cookiecutter.email }}'
 description = '{{ cookiecutter.project_short_description }}'
-requirements = [{% if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0', {% endif %}]
+requirements = [{% if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0'{% endif %}{% if cookiecutter.use_versioneer == 'y' %}, 'versioneer==0.18', {% endif %}]
 setup_requirements = [{% if cookiecutter.use_pytest == 'y' %}'pytest-runner', {% endif %}]
 test_requirements = [{% if cookiecutter.use_pytest == 'y' %}'pytest', {% endif %}]
 console_scripts = [
@@ -46,7 +46,7 @@ setup(
     version=version,
     {% if cookiecutter.use_versioneer == 'y' -%}
     cmdclass=cmdclass,
-    {%- endif %}
+    {% endif -%}
     url=url,
     author=author,
     author_email=author_email,
@@ -58,7 +58,7 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     setup_requires=setup_requirements,
     install_requires=requirements,
-    tests_require=test_requirements,
+    tests_requires=test_requirements,
     include_package_data=True,
     zip_safe=False,
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}

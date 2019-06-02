@@ -27,4 +27,4 @@ if __name__ == '__main__':
     if '{{ cookiecutter.use_versioneer }}' == 'y':
         import subprocess
         cmd = ["versioneer", "install"]
-        subprocess.call(cmd)
+        subprocess.Popen(cmd)

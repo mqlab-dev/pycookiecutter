@@ -201,7 +201,7 @@ def test_using_versioneer(cookies):
     project_dir = str(result.project)
     cmd = ["versioneer", "install"]
     with inside_dir(project_dir):
-        subprocess.call(cmd) == 0
+        subprocess.Popen(cmd) == 0
 
 
 def test_not_using_versioneer(cookies):

@@ -21,7 +21,7 @@ author = "Qiong X. Michaels"
 author_email = 'qiong@mqlab.dev'
 description = "Starting template for creating a Python package."
 keywords = ['cookiecutter', 'template', 'package']
-requirements = []
+requirements = ['versioneer==0.18', ]
 setup_requirements = ['pytest-runner', ]
 test_requirements = ['pytest', ]
 
@@ -36,6 +36,9 @@ setup(
     author_email=author_email,
     license="BSD license",
     description=description,
+    setup_requires=setup_requirements,
+    install_requires=requirements,
+    tests_requires=test_requirements,
     long_description=readme + '\n\n' + history,
     keywords=keywords,
     classifiers=[
