@@ -27,5 +27,5 @@ deploy:
   on:
     tags: true
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-    python: 3.5
+    python: 3.7
 {%- endif %}

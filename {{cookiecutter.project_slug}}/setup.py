@@ -58,7 +58,7 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     setup_requires=setup_requirements,
     install_requires=requirements,
-    tests_requires=test_requirements,
+    tests_require=test_requirements,
     include_package_data=True,
     zip_safe=False,
     {%- if 'no' not in cookiecutter.command_line_interface|lower %}

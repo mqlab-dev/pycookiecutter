@@ -1,4 +1,4 @@
-dist: xenial   # required for Python >= 3.7
+dist: xenial
 language: python
 python:
 - 3.7
@@ -7,3 +7,13 @@ python:
 cache: pip
 install: pip install -U tox-travis
 script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: mqlab-dev
+  password:
+    secure: cNpacbwZuHpnRgsbwutwCE0gd3nEk3PIr3pfOYrAYv71pvrD7KLlSAJEQNdiEmHQQ4AP276YZkXC8Y+nn6xgTYpyW2EY8nKpvcH1sk9q/SgKaEePQEDVuUC2ozQI+tF313xqOkr3jrIgXVgQQNz0hlAPRr77evSarrzVNGGVx5wQYHVAIEsCipN/SO+O10I6N1nSh1wUvjm7r3pYyVafg21tcgASlDdsiZ0frOpb0ObW7x0AHNRXCce/4UKo15HsZTmH7vmFHNbhFpsAJYCyKAFsLqVjvUZI8Jce+SnjlD+v9uwwsIFdViHqtPQlMPzxKm/9obFuMw/rCuuVCFS6mcxCOeelV5EadvpDCJ2AVsvWxPEMzTwsudfr0K518FHIgegZ/YNx0AS40XbJbMdDSS9euwAz+Cr1edNKQ1P8HHECUucu2vQLyVG4er/Lucl8fQdp6JPomtfGEHDIRdYbBikTCAwF7WF+cFE3ugbagxKhh/Yen56g5yoiITYEkvEMO9gyXavThhP1f5f8Img7Aa49Tnit/kgw4Sbwq9pqswGy0F71hu1cLWaPpO4HyQXDrkWCx2kdvqUR6wDfpF/xdnphzRIxQotaK+cqYG+9ckxZSH1L45ixVqvp+23kr0WtsHpSYYgDF5RMLbaYw8NcroPK9cY9K6DxNBORdr/aRTw=
+  on:
+    tags: true
+    repo: mqlab-dev/pycookiecutter
+    python: 3.7

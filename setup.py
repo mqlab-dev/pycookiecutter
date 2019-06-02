@@ -38,7 +38,7 @@ setup(
     description=description,
     setup_requires=setup_requirements,
     install_requires=requirements,
-    tests_requires=test_requirements,
+    tests_require=test_requirements,
     long_description=readme + '\n\n' + history,
     keywords=keywords,
     classifiers=[
